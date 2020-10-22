@@ -1,17 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { render } from 'react-dom'
+import Layout from './pages/Layout'
+import './style/theme.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCircle } from '@fortawesome/free-regular-svg-icons'
+import { faSyncAlt, faPlus } from '@fortawesome/free-solid-svg-icons'
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+library.add(faCircle, faPlus)
+
+render(
+    <Layout />,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
